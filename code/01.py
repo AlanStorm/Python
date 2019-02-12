@@ -406,30 +406,273 @@
 # c = Cat("Cat")
 #
 #
+#
+#
+# # 继承中的构造函数 -3
+# class Animal:
+#     def __init__(self):
+#         print('Animal')
+#
+#
+# class PaXingAni(Animal):
+#     pass
+#
+#
+# class Dog(PaXingAni):
+#     pass
+#
+#
+# # 实例化Dog时，查找Dog的构造函数，参数匹配，不报错
+# d = Dog()
+#
+#
+# class Cat(PaXingAni):
+#     pass
+#
+#
+# # 此时，由于Cat没有构造函数，则向上查找
+# # 因为PaXingAni的构造函数需要两个参数，实例化的时候给了一个，报错
+# c = Cat()
+#
+#
+#
+#
+# print(type(super))
+# help(super)
+#
+#
+#
+#
+# class A:
+#     pass
+#
+#
+# class B(A):
+#     pass
+#
+#
+# class C(B, A):
+#     pass
+#
+#
+# print(A.__mro__)
+# print(B.__mro__)
+# print(C.__mro__)
+#
+#
+#
+#
+# # 多继承例子
+# # 子类可以直接拥有父类的属性和方法，私有属性和方法除外
+# class Fish:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def swim(self):
+#         print("I am swimming...")
+#
+#
+# class Bird:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def fly(self):
+#         print("I am flying...")
+#
+#
+# class Person:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def work(self):
+#         print("Working...")
+#
+#
+# class SuperMan(Person, Bird, Fish):
+#     def __init__(self, name):
+#         self.name = name
+#
+#
+# s = SuperMan("yueyue")
+# s.fly()
+# s.swim()
+#
+#
+# # 单继承例子
+# class Student(Person):
+#     def __init__(self, name):
+#         self.name = name
+#
+#
+# stu = Student("yueyue")
+# stu.work()
+#
+#
+#
+#
+# # 菱形问题
+# class A:
+#     pass
+#
+#
+# class B(A):
+#     pass
+#
+#
+# class C(A):
+#     pass
+#
+#
+# class D(B, C):
+#     pass
+#
+#
+#
+#
+# # 构造函数例子
+# class Person:
+#     # 对Person类进行实例化的时候
+#     # 姓名要确定
+#     # 年龄要确定
+#     # 地址肯定有
+#     def __init__(self):
+#         self.name = "NoName"
+#         self.age = 18
+#         self.address = "Studentwhoneheim"
+#         print("In Init func")
+#
+#
+# # 实例化一个人
+# p = Person()
+#
+#
+#
+#
+# # Mixin案例
+# class Person:
+#     name = "liuyong"
+#     age = 18
+#
+#     def eat(self):
+#         print("EAT...")
+#
+#     def drink(self):
+#         print("DRINK...")
+#
+#     def sleep(self):
+#         print("SLEEP...")
+#
+#
+# class Teacher(Person):
+#     def work(self):
+#         print("Work")
+#
+#
+# class Student(Person):
+#     def study(self):
+#         print("Study")
+#
+#
+# class Tutor(Teacher, Student):
+#     pass
+#
+#
+# t = Tutor()
+#
+# print(Tutor.__mro__)
+# print(t.__dict__)
+# print(Tutor.__dict__)
+#
+# print("*" * 20)
+#
+#
+# class TeacherMixin:
+#     def work(self):
+#         print("Work")
+#
+#
+# class StudentMixin:
+#     def study(self):
+#         print("Study")
+#
+#
+# class TutorMixin(Person, TeacherMixin, StudentMixin):
+#     pass
+#
+#
+# tt = TutorMixin
+# print(TutorMixin.__mro__)
+# print(tt.__dict__)
+# print(TutorMixin.__dict__)
+#
+#
+#
+#
+# # issubclass
+# class A:
+#     pass
+#
+#
+# class B(A):
+#     pass
+#
+#
+# class C:
+#     pass
+#
+#
+# print(issubclass(B, A))
+# print(issubclass(C, A))
+# print(issubclass(B, object))
+#
+#
+#
+#
+# # isinstance
+# class A:
+#     pass
+#
+#
+# a = A()
+#
+# print(isinstance(a, A))
+# print(isinstance(A(), A))
+#
+#
+#
+#
+# # hasattr
+# class A:
+#     name = "NoName"
+#
+#
+# a = A()
+#
+# print(hasattr(a, "name"))
+# print(hasattr(a, "age"))
+#
+#
+#
+#
+# # help案例
+# # 我想知道setattr的具体用法
+# help(setattr)
+#
+#
+#
+#
+# # dir 案例
+# class A:
+#     pass
+#
+#
+# # dir(A)
+# a = A()
+# print(dir(a))
+#
+#
 
 
-# 继承中的构造函数 -3
-class Animal:
-    def __init__(self):
-        print('Animal')
 
 
-class PaXingAni(Animal):
-    pass
 
-
-class Dog(PaXingAni):
-    pass
-
-
-# 实例化Dog时，查找Dog的构造函数，参数匹配，不报错
-d = Dog()
-
-
-class Cat(PaXingAni):
-    pass
-
-
-# 此时，由于Cat没有构造函数，则向上查找
-# 因为PaXingAni的构造函数需要两个参数，实例化的时候给了一个，报错
-c = Cat()
