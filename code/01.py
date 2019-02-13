@@ -876,11 +876,160 @@
 # yueyue.say()
 #
 #
+#
+#
+# # 抽象
+# class Animal:
+#     def say_hello(self):
+#         pass
+#
+#
+# class Dog(Animal):
+#
+#     def say_hello(self):
+#         print('问一下对方')
+#
+#
+# class Person(Animal):
+#
+#     def say_hello(self):
+#         print('Kiss me')
+#
+#
+# d = Dog()
+# d.say_hello()
+#
+# p = Person()
+# p.say_hello()
+#
+#
+#
+#
+# # 抽象类的实现
+# import abc
+#
+#
+# # 声明一个类并且制定当前类的元类
+# class Human(metaclass=abc.ABCMeta):
+#     # 定义一个抽象方法
+#     @abc.abstractmethod
+#     def smoking(self):
+#         pass
+#
+#     # 定义类抽象方法
+#     def drink(self):
+#         pass
+#
+#     # 定义静态抽象方法
+#     @staticmethod
+#     def play():
+#         pass
+#
+#     def sleep(self):
+#         pass
+#
+#
+#
+# # 函数名可以当变量使用
+# def say_hello(name):
+#     print("{0}你好，来一发嘛？".format(name))
+#
+#
+# say_hello("月月")
+#
+# liuming = say_hello
+#
+# liuming("yueyue")
+#
+#
+# # 自己组装一个类
+# class A:
+#     pass
+#
+#
+# def say(self):
+#     print("Saying...")
+#
+#
+# class B:
+#     def say(self):
+#         print("Saying...")
+#
+#
+# say(9)
+#
+# A.say = say
+#
+# a = A()
+# a.say()
+#
+# b = B()
+# b.say()
+#
+#
+#
+#
+# # 组装类例子 2
+# # 自己组装一个类
+# from types import MethodType
+#
+#
+# class A:
+#     pass
+#
+#
+# def say(self):
+#     print("Saying...")
+#
+#
+# a = A()
+# a.say = MethodType(say, A)
+# a.say()
+# help(MethodType)
+#
+#
+#
+#
+# help(type)
+#
+#
+# # 利用type造一个类
+# # 先定义类应该具有的成员函数
+# def say(self):
+#     print("Saying...")
+#
+#
+# def talk(self):
+#     print("Talking...")
+#
+#
+# # 用type创建一个类
+# A = type("AName", (object,), {"class_say": say, "class_talk": talk})
+# # 然后可以像正常访问一样使用类
+# a = A()
+# a.class_say()
+# a.class_talk()
+#
+#
 
 
+# 元类演示
+# 元类写法是固定的，必须继承自type
+# 元类一般命名为MetaClass结尾
+class TuLingMetaClass(type):
+    # 注意一下写法
+    def __new__(cls, name, args, kwargs):
+        # 自己的业务逻辑
+        print("哈哈，我是元类呀")
+        kwargs['id'] = "00000"
+        kwargs['addr'] = "北京海底拿去"
+        return type.__new__(cls, name, args, kwargs)
 
 
+# 元类定义完就可以使用，使用注意写法
+class Teacher(object, metaclass=TuLingMetaClass):
+    pass
 
 
-
-
+t = Teacher()
+print(t.id)
