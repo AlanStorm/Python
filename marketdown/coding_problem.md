@@ -1,0 +1,127 @@
+# 编程问题
+- 为什么需要编码问题
+    - 本质上计算机只能识别01代码
+    - 如何用一长串代01码表示复杂的信息
+- 编码简史
+    - 二进制
+        - bit：一个0或者1的二进制数字
+        - byte：八个01代码，字节
+    - 第一阶段：ASCII
+    - 第二阶段：百花齐放，GB2312，GBK，BIG5，Latin1，JIS，
+        - Latin1：兼容欧洲大多数语言
+        - 中国：GBxxxx
+        - 韩国台湾：BIG5
+        - 日本：JIS
+        - ANSI-MBCS(Multi-bytes charecter set，多字节字符集)
+    - 第三阶段：Unicode（ISO）
+    
+# 编码表示方法
+- ASCII-american standard code for information interchange
+    - 所有控制字符（包括回车，删除等）编码在0-31范围以及127
+    - 所有标点符号，英文大小写放在32-127之间
+    - 预留128-255之间位置
+    - 0xxx xxxx 是它的编码形式
+- Latin1
+    - 0-127的所有位置不懂，那么可以兼容ASCII，二进制0xxx xxxx
+    - 128-255位置全部用完，二进制位1xxx xxxx
+        - 128-159之间为控制字符，
+        - 160-255位文字符号，
+        - 其中包括了西欧语言、希腊语、泰语、阿拉伯语、稀薄腊鱼
+    - 欧元符号
+- GBxxxxxx
+    - GB2312
+        - 如果一个字节中第一位为0，那么这就是一个ASCII字符，
+        - 如果一个字节中第一位为1，那么这个是汉字，认定需要两个字节才表示一个编码的文
+        - 这个码表中包含汉字6763个和非汉字图形字符682个
+        - 还有很多的空间没有用到，索性全部预留
+        - 0xxx xxxx：表示ASCII字符
+        - 1xxx xxxx 1xxx xxxx：表示汉字
+    - GBK
+        - 在GB2312基础上添加汉字
+        - 兼容GB2312和ASCII
+        - 0xxx xxxx：表示ASCII字符
+        - 1xxx xxxx 1xxx xxxx：表示汉字
+    - GB18030
+        - 2/4位混编
+# Unicode
+- 只是一个码表，具体实现没有规定
+- 0-0x10FFF来映射这些字符，最多可以容纳1114112个字符
+- 中文的斑马范围为4E00-9FCF，其中9FC4-9FCF之间的区间没有使用
+- 上述区间全部是汉字，不包含全角字符，不包含特使文字
+- UTF=UnicodeTransformationFormat
+- UTF-8
+
+                0x0000~0x007F(0 ~ 127)      1字节 0xxxxxxx
+                0x0080~0x07FF(128 ~ 2047)   110xxxxx 10xxxxxx
+                0x0800~FFFF(2048 ~ 65535)   3字节 1110xxxx  10xxxxxx 10xxxxxx
+                0x10000~1FFFFFF(65536 ~ 2097152)      4字节 11110xxx 10xxxxxx 10xxxxxx
+                0x2000000~0x3FFFFFF     5字节     111110xx 10xxxxxx
+                0x4000000~0x7FFFFFFF    6字节     1111110x 10xxxxxx
+    
+-UTF-16，UTF-32
+    - UTF-16 是早期Unicode历史遗留问题
+    - UTF-32 浪费空间
+- UCS-4
+    - UCS = UniversalCharacterSet，通用字符集
+    - UCS-2与Unicode相同
+    - 采用2个字节，订场的表示每一个字符，所以总计可以表示2^16个字符
+- UCS-4
+    - 第一个字节：表示组（group），最高位为0，则有128个
+    - 第二个字节：表示平面（plane），256个
+    - 第三个字节：表示行（row），256个
+    - 第四个字节：表示码位（cell），256个
+    - 如果UCS-4前两个字节为0，则就是CUS-2
+    
+# 常用概念
+- 编码/解码：由人类可直接读取信息转换成bytes格式的，叫编码
+- 大尾（BigEndian）和小尾（LittleEndian）
+    - '汉' -> 6C49
+    - 6C49 -> BigEndian
+    - 496C -> LittleEndian
+- BOM
+    - UTF-8没有字节顺序问题
+    - UTF-16会出现问题
+        - '奎' -> 594E
+        - '乙' -> 4E59
+    - BOM-ByteOrderMark
+        - "ZERO WIDTH NO-BREAK SPACE" -> FEFF，在UCS中不存在
+        - FEFF -> BigEndian   
+        - FFFE -> LittleEndian 
+        - UTF-8 用来表示编码，FEFF的UTF-8编码是 EF BB BF，用来表示此后编码是UTF-8编码
+# Python编码类型
+- str
+- bytes
+- bytearry
+        
+        >>> b = bytes.formhex('E4 B8 AD')
+        >>> b
+        b'\xe4\xb8\xad'
+        >>> b.decode('utf-8')
+        '中'
+        >>> str(b)
+        "b'\\xe4\\xb8\\xad'"
+        
+        >>> ord('A')
+        65
+        >>> ord('中')
+        20013
+        >>> chr(65)
+        'A'
+        >>> chr(20013)
+        '中'
+        
+        
+- python文件默认utf-8编码，如果特殊需要，需要声明
+    - 放在第一行，或者第二行
+    - '''# -*- coding: windows-1252 -*-'''
+    - 读写文件默认utf-8，可以指定
+    - code point 方式比较字符串，可能会带来问题
+        - 重音符号的表示
+        - 使用 unicodedata.normalize 函数
+- python源码中出现了解码错误，那么会产生SyntaxError异常
+- 其他情况下，如果发现编码解码错误，那么会产生UnicodeEncodeError，UnicodeDecodeError异常
+                
+    
+    
+         
+                                          
