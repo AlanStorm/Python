@@ -186,20 +186,27 @@ class World(Tk):
         :return:
         """
         self.is_game_over = True
-        self.canvas.create_text(200, 100, text="Game over")
-        qb = Button(self, text="Quit", command=self.destroy)
-        qb.pack()
-        rb = Button(self, text="Again", command=self.__init__)
-        rb.pack()
+        self.canvas.create_text(250, 150, text="Game over")
+        qb = Button(self, text="Quit", command=self.destroy, relief='raised', width=8, height=2)
+        qb.pack(fill='x', anchor='center')
+        rb = Button(self, text="Again", command=lambda: Start(self), relief='raised', width=8, height=2)
+        rb.pack(fill='x', anchor='center')
 
 
-q = queue.Queue()
-world = World(q)
+class Start:
+    def __init__(self, world):
+        if world != "":
+            world.destroy()
+        q = queue.Queue()
+        world = World(q)
 
-snake = Snake(world, q)
-world.bind("<Key-Left>", snake.key_pressed)
-world.bind("<Key-Right>", snake.key_pressed)
-world.bind("<Key-Up>", snake.key_pressed)
-world.bind("<Key-Down>", snake.key_pressed)
+        snake = Snake(world, q)
+        world.bind("<Key-Left>", snake.key_pressed)
+        world.bind("<Key-Right>", snake.key_pressed)
+        world.bind("<Key-Up>", snake.key_pressed)
+        world.bind("<Key-Down>", snake.key_pressed)
 
-world.mainloop()
+        world.mainloop()
+
+
+Start('')
