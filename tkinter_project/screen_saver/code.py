@@ -21,11 +21,13 @@ class RandomBall:
         :param screen_width: 屏幕宽
         :param screen_height: 屏幕高
         """
+        self.canvas = canvas
         # 球出现那的出事位置要随机，此处表示球的圆心
         # xpos表示位置的x坐标
-        self.xpos = random.randint(10, int(screen_width) - 20)
+
+        self.xpos = random.randint(120, int(screen_width) - 120)
         # ypos表示位置的y坐标
-        self.ypos = random.randint(10, int(screen_height) - 10)
+        self.ypos = random.randint(120, int(screen_height) - 120)
 
         # 定义球运动的速度
         # 模拟运动：不断的擦掉原来的画，然后在一个新的地方在重新绘制
@@ -65,7 +67,7 @@ class RandomBall:
         x1 = self.xpos - self.radius
         y1 = self.ypos - self.radius
         x2 = self.xpos + self.radius
-        y2 = self.xpos + self.radius
+        y2 = self.ypos + self.radius
 
         # 再有两个对角坐标的前提下，可以进行画圆
         # fill表示填充颜色
@@ -99,7 +101,7 @@ class RandomBall:
             # self.yvelocity *= -1
 
         # 在画布上挪动图画
-        self.cavas.move(self.item, self.xvelocity, self.yvelocity)
+        self.canvas.move(self.item, self.xvelocity, self.yvelocity)
 
 
 class ScreenSaver:
@@ -131,7 +133,7 @@ class ScreenSaver:
 
         # 在画布上画球
         for i in range(self.num_balls):
-            ball = RandomBall(self.canvas, screen_width=2, screen_height=h)
+            ball = RandomBall(self.canvas, screen_width=w, screen_height=h)
             ball.create_ball()
             self.balls.append(ball)
 
@@ -143,7 +145,7 @@ class ScreenSaver:
             ball.move_ball()
 
         # after是200毫秒后启动一个函数，需要启动的函数是第二个参数
-        self.canvas.after(200, self.run_screen_saver())
+        self.canvas.after(100, self.run_screen_saver)
 
     def myquit(self, e):
         # 此处只是利用了事件处理机制

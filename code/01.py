@@ -1016,20 +1016,21 @@
 # 元类演示
 # 元类写法是固定的，必须继承自type
 # 元类一般命名为MetaClass结尾
-class TuLingMetaClass(type):
-    # 注意一下写法
-    def __new__(cls, name, args, kwargs):
-        # 自己的业务逻辑
-        print("哈哈，我是元类呀")
-        kwargs['id'] = "00000"
-        kwargs['addr'] = "北京海底拿去"
-        return type.__new__(cls, name, args, kwargs)
+# class TuLingMetaClass(type):
+#     # 注意一下写法
+#     def __new__(cls, name, args, kwargs):
+#         # 自己的业务逻辑
+#         print("哈哈，我是元类呀")
+#         kwargs['id'] = "00000"
+#         kwargs['addr'] = "北京海底拿去"
+#         return type.__new__(cls, name, args, kwargs)
+#
+#
+# # 元类定义完就可以使用，使用注意写法
+# class Teacher(object, metaclass=TuLingMetaClass):
+#     pass
+#
+#
+# t = Teacher()
+# print(t.id)
 
-
-# 元类定义完就可以使用，使用注意写法
-class Teacher(object, metaclass=TuLingMetaClass):
-    pass
-
-
-t = Teacher()
-print(t.id)
