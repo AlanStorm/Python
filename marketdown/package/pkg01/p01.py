@@ -16,6 +16,4 @@ def say_hello():
     print('Hi,欢迎来到')
 
 
-# 入口
-if __name__ == '__main__':
-    print('我是模块p01')
+print('我是模块p01')
