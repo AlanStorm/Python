@@ -5,6 +5,8 @@ from datetime import datetime, timedelta
 from datetime import datetime
 import os
 import os.path as op
+import zipfile
+import random
 
 # calendar: 获取一年的日历字符串
 # 参数
@@ -258,4 +260,36 @@ absp = op.abspath(".")
 # 格式：shutil.make_archive('归档之后的目录和文件名','后缀','需要归档的文件夹')
 # 返回值：归档之后的地址
 
+# unpack_archive() 解包操作
+# 格式：shutil.unpack_archive('归档文件地址','解包之后的地址')
+# 返回值：解包之后的地址
 
+# zipfile.ZipFile(file[.mode[,compression[,allowZip64]]])
+# 创建一个ZipFile对象，表示一个zip文件。参数file表示文件的路径或者类文件对象
+
+# zipfile.getinfo(name)
+# 获取zip文档内指定文件的信息。返回一个zipfile.ZipInfo对象，它包括文件的详细信息。
+
+# zipfile.namelist()
+# 获取zip文档内所有文件的名称列表。
+
+# ZipFile.extractall([path.[,members[,pwd]]])
+# 解压zip文档中的所有文件当当前目录。参数members的默认值为zip文档内的所有文件名称...
+
+# random() 获取0-1之间的随机小数
+# 格式：random.random()
+# 返回值：随机0-1之间的小数
+
+# choice() 随机返回序列中的某个值
+# 格式：random.choice(序列)
+# 返回值：序列中的某个值
+l = [str(i) + "haha" for i in range(10)]
+rst = random.choice(l)
+
+# shuffle() 随机打乱列表
+# 格式：random.shuffle(列表)
+# 返回值：None，打乱源列表
+
+# randint() 随机产生一个证书
+# 格式：random.randint(a,b)
+# 返回值：返回一个a到b之间的随机整数，包含a和b
