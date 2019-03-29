@@ -41,3 +41,35 @@
                 7         第几天    tm_yday  1-366  
                 8         夏令时    tm_isdst 0,1，-1 （表示夏令时）
         
+
+# strftime：将时间元组转换成自定义的字符串格式
+# datetime模块
+- datetime 提供日期和时间的运算和表示
+# datetime.datetime 模块
+- 提供比较好用的时间而已
+# OS - 操作系统相关
+- 跟操作系统相关，主要是文件操作
+- 与系统相关的操作，主要包含在三个模块里
+    - os ，操作系统目录相关
+    - os.path，系统路径相关操作
+    - shutil，高级文件操作，目录树的操作，文件赋值，删除，移动
+- 路径 
+    - 绝对路径：总是从根目录上开始
+    - 相对路径：基本以当前环境为开始的一个相对的地方
+# 值部分
+- os.cudir：curretn dir,当前目录
+- os.pardir: parent dir,父目录
+- os.sep：当前系统的路径分隔符
+    - windows："\"
+    - linux："/"
+- os.linesep：当期系统的换行符
+    - windows："\r\n"
+     - unix,linux,macos："\n"
+- os.name：当前系统名称    
+    - windows：nt
+    - mac，unix，linux：posix
+# shutil 模块
+# 归档和压缩
+- 归档：把多个文件或者文件夹合并到一个文件当中
+- 压缩：用算法吧过个文件或者文件夹无损或者有损合并到一个文件当中
+    
