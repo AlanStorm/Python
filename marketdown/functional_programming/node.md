@@ -82,3 +82,23 @@ https://www.cnblogs.com/yyds/p/6901864.html
 
 ### zip
 - 把两个可迭代内容生成一个可迭代的tuple元素类型组成的内容
+
+### enumerate
+- 跟zip功能比较像
+- 对可迭代对象里的每一元素，配上一个索引，然后索引和内容构成tuple类型
+
+### collections模块
+- namedtuple
+- dequeue
+
+#### namedtuple
+ - tuple类型
+ - 是一个可命名的tuple
+#### dequeue
+- 比较方便的解决了频繁删除插入带来的效率问题
+
+#### defaultdict
+- 当直接读取dict不存在的属性时，直接返回默认值
+
+#### Counter
+- 统计字符串个数

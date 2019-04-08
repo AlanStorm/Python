@@ -97,7 +97,6 @@
 #
 from functools import reduce
 
-
 #
 #
 # # 定义一个操作函数
@@ -337,11 +336,70 @@ from functools import reduce
 # print(z)
 # for i in z:
 #     print(i)
-l1 = ['wangwang', 'mingyue', 'yyt']
-l2 = [89, 23, 78]
-z = zip(l1, l2)
-for i in z:
-    print(i)
+# l1 = ['wangwang', 'mingyue', 'yyt']
+# l2 = [89, 23, 78]
+# z = zip(l1, l2)
+# for i in z:
+#     print(i)
+# #
+# l3 = [i for i in z]
+# print(l3)
 #
-l3 = [i for i in z]
-print(l3)
+#
+# # enumerate案例1
+# l1 = [11, 22, 33, 44, 55]
+# em = enumerate(l1)
+# l2 = [i for i in em]
+# print(l2)
+#
+# em = enumerate(l1, start=100)
+# l2 = [i for i in em]
+# print(l2)
+#
+#
+# import collections
+#
+# Point = collections.namedtuple('Point', ['x', 'y'])
+# p = Point(11, 22)
+# print(p.x)
+# print(p[0])
+#
+# Circle = collections.namedtuple('Circle', ['x', 'y', 'r'])
+# c = Circle(100, 150, 50)
+# print(c)
+# print(type(c))
+# # 想检测一下namedtuple到底属于谁的子类
+# print(isinstance(c, tuple))
+#
+#
+# from collections import deque
+#
+# q = deque(['a', 'b', 'c'])
+# print(q)
+#
+# q.append("d")
+# print(q)
+#
+# q.appendleft('x')
+# print(q)
+#
+#
+# from collections import defaultdict
+#
+# func = lambda: "啊大大"
+# d = defaultdict(func)
+# d['one'] = 1
+# d['two'] = 2
+# print(d['one'])
+#
+#
+# from collections import Counter
+#
+# # 为什么下面结构不把qweasdqwe最为键值，而是以其中每一个字符作为键值
+# # 需要括号美容为可迭代
+# c = Counter("qweasdqwe")
+# print(c)
+#
+# s = ["liudana", 'love', 'love', 'love', 'wangixaona']
+# c = Counter(s)
+# print(c)
