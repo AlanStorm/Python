@@ -222,3 +222,95 @@
 # print(f3())
 #
 #
+# def hello():
+#     print("Hello world")
+#
+#
+# hello()
+#
+# f = hello
+# f()
+# # f和hello是一个函数
+# print(id(f))
+# print(id(hello))
+#
+# print(f.__name__)
+# print(hello.__name__)
+#
+#
+# 现在有新的需求：
+# 对hello功能进行扩展，每次打印hello之前打印当前系统时间
+# 而实现这个功能又不能改动现有代码
+# ==>使用装饰器
+# 任务：
+# 对hello函数进行功能扩展，每次打印hello之前打印当前时间
+# import time
+#
+#
+# # 高阶函数，已函数作为参数
+# def printTime(f):
+#     def wrapper(*args, **kwargs):
+#         print("Time:", time.ctime())
+#         return f(*args, **kwargs)
+#
+#     return wrapper
+#
+#
+# # 上面顶一个装饰器，使用的时候需要用到@，此符号是python的语法糖
+# @printTime
+# def hello():
+#     print("Hello world")
+#
+#
+# hello()
+#
+#
+# # 装饰器的好处是，一旦定义，则可以装饰任意函数
+# # 一旦被其装饰，则吧装饰器的功能直接添加到定义函数的功能shang
+# @printTime
+# def hello2():
+#     print("今天很高兴")
+#     print("见天阿里的可能")
+#
+#
+# hello2()
+#
+#
+# # 上面对函数的装饰使用了系统定义的语法糖
+# # 下面开始手动执行下装饰器
+# # 先定义函数
+# def hello3():
+#     print("我是手动执行的")
+#
+#
+# hello3()
+#
+# hello3 = printTime(hello3)
+# hello3()
+# f = printTime(hello3)
+# f()
+#
+#
+# # 把字符串转换成十进制数字
+# print(int("12345"))
+#
+# # 求八进制的字符串12345，表示成十进制的数字是多少
+# print(int("12345", base=8))
+#
+#
+# # 新建一个函数，此函数是默认输入的字符串是16进制
+# # 把此字符串返回十进制的数字
+# def int16(x, base=16):
+#     return int(x, base)
+#
+#
+# print(int16("12345"))
+#
+#
+# import functools
+#
+# # 实现上面int16的功能
+# int16 = functools.partial(int, base=16)
+# print(int16("12345"))
+#
+#
