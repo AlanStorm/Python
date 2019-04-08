@@ -122,4 +122,226 @@ from functools import reduce
 # rst = filter(isEven, l)
 # # 返回的filter内容是一个可迭代对象
 # print(rst)
-# print([i for i in rst])
+#
+#
+# # 排序的案例
+# a = [234, 1231, 324, 231, 3, 12, 31]
+# al = sorted(a, reverse=True)
+# print(al)
+#
+#
+# # 排序案例2
+# a = [-43, 23, 45, 6, -23, 2, -2312]
+# # 按照绝对值进行排序
+# # abs是求绝对值的意思
+# # 即按照绝对值的倒叙排列
+# al = sorted(a, key=abs, reverse=True)
+# print(al)
+#
+#
+# # sorted案例
+# astr = ['dana', 'Danaa', 'wangxiaojing', 'jingjing', 'haha']
+# str1 = sorted(astr)
+# print(str1)
+#
+# str2 = sorted(astr, key=str.lower)
+# print(str2)
+#
+#
+# # 定义一个普通函数
+# def myF(a):
+#     print("In myF")
+#     return None
+#
+#
+# a = myF(8)
+# print(a)
+#
+#
+# # 函数作为返回值返回，被返回的函数在函数体内定义
+# def myF2():
+#     def myF3():
+#         print('In myF3')
+#         return 3
+#
+#     return myF3
+#
+#
+# # 使用上面定义
+# # 调用myF2，返回一个函数myF3，复制给f3
+# f3 = myF2()
+# print(type(f3))
+# print(f3())
+#
+#
+#
+# # 负责一点的返回函数的例子
+# # args：参数列表
+# # 1.myF4定义函数，返回内部定义的函数myF5
+# # 2.myF5使用了外部变量，这个变量是myF4的参数
+# def myF4(*args):
+#     def myF5():
+#         rst = 0
+#         for n in args:
+#             rst += n
+#         return rst
+#
+#     return myF5
+#
+#
+# f5 = myF4(1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+# # f5的调用方式
+# print(f5())
+#
+# f6 = myF4(10, 20, 30, 40, 50)
+# print(f6())
+#
+#
+# # 闭包常见坑
+# def count():
+#     # 定义列表m，列表里存放的是定义的函数
+#     fs = []
+#     for i in range(1, 4):
+#         # 定义了一个函数f
+#         # f是一个闭包结构
+#         def f():
+#             return i * i
+#
+#         fs.append(f)
+#     return fs
+#
+#
+# f1, f2, f3 = count()
+# print(f1())
+# print(f2())
+# print(f3())
+#
+#
+# 修改上述函数
+# def count1():
+#     def f(j):
+#         def g():
+#             return j * j
+#
+#         return g
+#
+#     fs = []
+#     for i in range(1, 4):
+#         fs.append(f(i))
+#     return fs
+#
+#
+# f1, f2, f3 = count1()
+# print(f1())
+# print(f2())
+# print(f3())
+#
+#
+# def hello():
+#     print("Hello world")
+#
+#
+# hello()
+#
+# f = hello
+# f()
+# # f和hello是一个函数
+# print(id(f))
+# print(id(hello))
+#
+# print(f.__name__)
+# print(hello.__name__)
+#
+#
+# 现在有新的需求：
+# 对hello功能进行扩展，每次打印hello之前打印当前系统时间
+# 而实现这个功能又不能改动现有代码
+# ==>使用装饰器
+# 任务：
+# 对hello函数进行功能扩展，每次打印hello之前打印当前时间
+# import time
+#
+#
+# # 高阶函数，已函数作为参数
+# def printTime(f):
+#     def wrapper(*args, **kwargs):
+#         print("Time:", time.ctime())
+#         return f(*args, **kwargs)
+#
+#     return wrapper
+#
+#
+# # 上面顶一个装饰器，使用的时候需要用到@，此符号是python的语法糖
+# @printTime
+# def hello():
+#     print("Hello world")
+#
+#
+# hello()
+#
+#
+# # 装饰器的好处是，一旦定义，则可以装饰任意函数
+# # 一旦被其装饰，则吧装饰器的功能直接添加到定义函数的功能shang
+# @printTime
+# def hello2():
+#     print("今天很高兴")
+#     print("见天阿里的可能")
+#
+#
+# hello2()
+#
+#
+# # 上面对函数的装饰使用了系统定义的语法糖
+# # 下面开始手动执行下装饰器
+# # 先定义函数
+# def hello3():
+#     print("我是手动执行的")
+#
+#
+# hello3()
+#
+# hello3 = printTime(hello3)
+# hello3()
+# f = printTime(hello3)
+# f()
+#
+#
+# # 把字符串转换成十进制数字
+# print(int("12345"))
+#
+# # 求八进制的字符串12345，表示成十进制的数字是多少
+# print(int("12345", base=8))
+#
+#
+# # 新建一个函数，此函数是默认输入的字符串是16进制
+# # 把此字符串返回十进制的数字
+# def int16(x, base=16):
+#     return int(x, base)
+#
+#
+# print(int16("12345"))
+#
+#
+# import functools
+#
+# # 实现上面int16的功能
+# int16 = functools.partial(int, base=16)
+# print(int16("12345"))
+#
+#
+# # zip 案例
+# l1 = [1, 2, 3, 4, 5]
+# l2 = [11, 22, 33, 44, 55]
+# z = zip(l1, l2)
+# print(type(z))
+# print(z)
+# for i in z:
+#     print(i)
+l1 = ['wangwang', 'mingyue', 'yyt']
+l2 = [89, 23, 78]
+z = zip(l1, l2)
+for i in z:
+    print(i)
+#
+l3 = [i for i in z]
+print(l3)

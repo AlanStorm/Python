@@ -79,3 +79,6 @@ https://www.cnblogs.com/yyds/p/6901864.html
 ### 偏函数
 - 参数固定的函数，相当于一个由特定参数的函数体
 - functools.partial的作用是，把一个函数某些函数固定，返回一个新函数
+
+### zip
+- 把两个可迭代内容生成一个可迭代的tuple元素类型组成的内容
