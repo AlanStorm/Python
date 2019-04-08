@@ -131,4 +131,94 @@
 #
 # str2 = sorted(astr, key=str.lower)
 # print(str2)
-
+#
+#
+# # 定义一个普通函数
+# def myF(a):
+#     print("In myF")
+#     return None
+#
+#
+# a = myF(8)
+# print(a)
+#
+#
+# # 函数作为返回值返回，被返回的函数在函数体内定义
+# def myF2():
+#     def myF3():
+#         print('In myF3')
+#         return 3
+#
+#     return myF3
+#
+#
+# # 使用上面定义
+# # 调用myF2，返回一个函数myF3，复制给f3
+# f3 = myF2()
+# print(type(f3))
+# print(f3())
+#
+#
+#
+# # 负责一点的返回函数的例子
+# # args：参数列表
+# # 1.myF4定义函数，返回内部定义的函数myF5
+# # 2.myF5使用了外部变量，这个变量是myF4的参数
+# def myF4(*args):
+#     def myF5():
+#         rst = 0
+#         for n in args:
+#             rst += n
+#         return rst
+#
+#     return myF5
+#
+#
+# f5 = myF4(1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+# # f5的调用方式
+# print(f5())
+#
+# f6 = myF4(10, 20, 30, 40, 50)
+# print(f6())
+#
+#
+# # 闭包常见坑
+# def count():
+#     # 定义列表m，列表里存放的是定义的函数
+#     fs = []
+#     for i in range(1, 4):
+#         # 定义了一个函数f
+#         # f是一个闭包结构
+#         def f():
+#             return i * i
+#
+#         fs.append(f)
+#     return fs
+#
+#
+# f1, f2, f3 = count()
+# print(f1())
+# print(f2())
+# print(f3())
+#
+#
+# 修改上述函数
+# def count1():
+#     def f(j):
+#         def g():
+#             return j * j
+#
+#         return g
+#
+#     fs = []
+#     for i in range(1, 4):
+#         fs.append(f(i))
+#     return fs
+#
+#
+# f1, f2, f3 = count1()
+# print(f1())
+# print(f2())
+# print(f3())
+#
+#
