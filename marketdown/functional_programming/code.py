@@ -95,15 +95,40 @@
 # print(l4)
 #
 #
-from functools import reduce
+# from functools import reduce
+#
+#
+# # 定义一个操作函数
+# # 加入操作函数只是想家
+# def myAdd(x, y):
+#     return x + y
+#
+#
+# # 对于列表[1,2,3,4,5,6]执行myAdd的reduce操作
+# rst = reduce(myAdd, [1, 2, 3, 4, 5, 6])
+# print(rst)
+#
+#
+# # 排序的案例
+# a = [234, 1231, 324, 231, 3, 12, 31]
+# al = sorted(a, reverse=True)
+# print(al)
+#
+#
+# # 排序案例2
+# a = [-43, 23, 45, 6, -23, 2, -2312]
+# # 按照绝对值进行排序
+# # abs是求绝对值的意思
+# # 即按照绝对值的倒叙排列
+# al = sorted(a, key=abs, reverse=True)
+# print(al)
+#
+#
+# # sorted案例
+# astr = ['dana', 'Danaa', 'wangxiaojing', 'jingjing', 'haha']
+# str1 = sorted(astr)
+# print(str1)
+#
+# str2 = sorted(astr, key=str.lower)
+# print(str2)
 
-
-# 定义一个操作函数
-# 加入操作函数只是想家
-def myAdd(x, y):
-    return x + y
-
-
-# 对于列表[1,2,3,4,5,6]执行myAdd的reduce操作
-rst = reduce(myAdd, [1, 2, 3, 4, 5, 6])
-print(rst)
