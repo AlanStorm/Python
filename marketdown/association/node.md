@@ -1,0 +1,29 @@
+# 协程
+- 参考资料
+    - http://python.jobbole.com/86481/
+    - http://python.jobbole.com/87310/
+    - https://segmentfault.com/a/1190000009781688
+# 迭代器
+- 可迭代（Iterable）：直接作用于for循环的变量
+- 迭代器（Iterator）：不但可以作用与for循环，开可以被next调用
+- list是点醒的可迭代对象，但不是迭代器
+- 通过isinstance判断
+- iterable和iterator可以转换
+    - 通过iter函数
+# 生成器
+- generator：一边循环一边计算下一个元素的机制/算法
+- 需要满足三个条件：
+    - 每次调用都生产出for循环需要的下一个元素
+    - 如果达到最后一个后，爆出StopIteration异常
+    - 可以被next函数调用
+- 如何生成一个生成器
+    - 直接使用
+    - 如果函数中包含yield，则这个函数就叫做生成器
+    - next调用函数，遇到yield返回
+# 协程
+- 历史历程
+    - 3.4引入协程，用yield实现
+    - 3.5引入协程语法
+    - 实现的协程比较好的包有asyncio，tornado，gevent
+- 定义：协程 是为非抢占式多任务产生子程序的计算机程序组件，协程允许不同入口点在不同位置暂停或开始执行程序
+- 从技术角度讲，协程就是一个你可以暂停执行的函数，或者干脆理解成生成器
