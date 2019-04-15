@@ -1,0 +1,37 @@
+# 格式化文件存储
+- xml，json
+- 为了解决不同设备之间信息交换
+# xml文件
+- 参考资料
+    - https://docs.python.org/3/library/xml.etree.elementtree.html
+    - http://www.runoob.com/python/python-xml.html
+    - https://blog.csdn.net/seetheworld518/article/details/49535285
+- XML（extensibleMarkupLanguage），可扩展标记语言
+    - 标记语言，语言中使用尖括号括起来的文本字符串标记
+    - 可扩展，用户介意自己定义需要的标记
+    - 例如：
+    
+                  <Teacher> 
+                      自定义标记Teacher
+                      在两个标记之间任何内容都应该跟Teacher相关
+                  </Teacher>
+    - 是w3c组织制定的一个标准
+    - XML描述的是数据本身，即数据的结构和定义
+    - HTML侧重于如何显示web页面中的数据
+
+- xml文档的构成
+    - 处理命令（可以认为一个文件内只有一个处理指令）
+        - 最多只有一行
+        - 且必须在第一行
+        - 内容是与xml本身处理起相关的一些声明或者指令
+        - 以xml关键字开头
+        - 一般用于声明XML的版本和采用的编码
+            - version属性是必须的
+            - encoding属性用来支出xml解释器使用的编码
+    - 根元素（一个文件内只有一个根元素）
+        - 在真个xml文件中，可以把他看作一个树形结构
+        - 根元素有且只能由一个
+    - 子元素
+    - 属性
+    - 内容
+    - 注释
