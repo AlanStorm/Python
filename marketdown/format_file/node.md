@@ -73,4 +73,44 @@
     - Pascal命名法
     - 用单词表示，第一个字母大写
     - 大小写严格区分
-    - 配对的标签必须一直
+    - 配对的标签必须一致
+- 命名空间
+    - 为了防止命名冲突
+            
+            <Student>
+              <Name>LiuYing</Name>
+              <Age>23</Age>
+            </Student>
+            <Room>
+              <Name>2014</Name>
+              <Location>1-23-1</Location>
+            </Room>    
+    - 如果归并上述两个内容信息，会产生冲突
+            
+            <Schooler>
+              <Name>LiuYing</Name>
+              <Age>23</Age>
+              <Name>2014</Name>
+              <Location>1-23-1</Location>
+            </Schooler>
+    - 为了避免冲突，需要给可能冲突元素添加命名空间
+    - xmlns：xml name space 的缩写
+                    
+                 <Schooler xmlns:student="http://my_student" xmlns:room="http://my_room">
+                    <student:Name>LiuYing</student:Name>
+                    <Age>23</Age>
+                    <romm:Name>2014</room:Name>
+                    <Location>1-23-1</Location>
+                </Schooler>
+# XML访问
+## 读取
+- XML读取分两个主要技术，SAX，DOM
+- SAX（Simple API for XML）：
+    - 基于事件驱动的API
+    - 利用SAX解析文档涉及到解析器和事件处理两部分
+    - 特点：
+        - 快
+        - 流式读取
+- DOM
+    - 是W3C规定的XML编程接口
+    - 一个XML文件在缓存中以树形结构保存，读取
