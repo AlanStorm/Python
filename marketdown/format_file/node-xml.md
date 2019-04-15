@@ -126,4 +126,24 @@
         - node.childNodes[index].nodeValue:获取单个节点值
         - node.firstNode:得到第一个节点，等价于node.childNodes[0]
         - node.attributes[tage_name]
+        - 案例v01
     - etree
+        - 以树形结构来表示xml
+        - root.getiterator:得到相应的可迭代的node集合
+        - root.iter
+        - find(node_name):查找指定node_name的节点,返回一个node
+        - root.findall(node_name):返回多个node_name的节点
+        - node.tag: node对应的tagename
+        - node.text:node的文本值
+        - node.attrib： 是node的属性的字典类型的内容
+        - 案例v02
+- xml文件写入
+    - 更改
+        - ele.set:修改属性
+        - ele.append: 添加子元素
+        - ele.remove:删除元素
+        - 案例 v03
+    - 生成创建
+        - SubElement, 案例v04
+        - minidom 写入， 案例v05
+        - etree创建， 案例v06
