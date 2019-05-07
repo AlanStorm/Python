@@ -69,6 +69,6 @@ def search_file(start_dir, target):
 
 rt = search_file(start_dir, target)
 
-f = open(os.getcwd() + os.sep + "backup.txt", 'w', encoding='utf-8')
-f.write("".join(rt))
+f = open(os.getcwd() + os.sep + "backup.txt", 'wb')
+f.write("\n".join(rt).encode('utf-8'))
 f.close()
