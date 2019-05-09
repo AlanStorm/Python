@@ -64,3 +64,6 @@ def main():
 
 
 test()
+main()
+# 一般情况我们在实际的工作当中，我们经常吧logging封装称一个装饰器，按照我们自己的习惯，
+# 我是习惯新建一个loggerTools的文件，在需要保存日志的地方，吧loggerTools给引进进来
