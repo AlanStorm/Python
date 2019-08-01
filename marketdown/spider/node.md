@@ -125,3 +125,8 @@
         - LwpCookieJar(filename,delayload=None,policy=None)
             - 创建与libwww-perl标准兼容的Set-cookie3格式的FileCookieJar实例  
         - 他们的关系是 CookieJar->FileCookieJar->MozillaCookieJar->LwpCookieJar
+    - 利用CookieJar访问人人，案例13
+        - 自动使用cookie登陆，大致流程是
+        - 打开登录页面后自动通过用户名和密码登录
+        - 自动提取返回回来的cookie
+        - 利用提取的cookie登录隐私页面    
