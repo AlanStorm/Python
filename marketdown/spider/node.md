@@ -104,3 +104,24 @@
 - ProxyHandler处理（代理服务器）
     - 使用代理IP，是爬虫的常用手段
      
+     
+     
+- session的存放位置
+    - 存在服务器端
+    - 一般情况，session是放在内存或者数据库中
+    - 没有cookie登陆，案例v11,可以看到，没使用cookie则返回网页为未登录状态
+
+- 使用cookie登录
+    - 直接吧cookie布置下来，然后手动放入请求头，案例v12
+    - http模块包含一些关于cookie的模块，通过他们我们可以自动使用cookie
+        - CookieJar
+            - 管理存储cookie，向传出的http请求添加cookie
+            - cookie存储在内存里面，CoolieJar实例回收后cookie将消失
+        - FileCookieJar(filename,delayload=None,policy=None)
+            - 使用文件管理cookie
+            - filename是保存cookie的文件
+        - MozillaCookieJar(filename,delayload=None,policy=None)
+            - 创建与mocilla浏览器cookie.txt兼容的FileCookieJar实例
+        - LwpCookieJar(filename,delayload=None,policy=None)
+            - 创建与libwww-perl标准兼容的Set-cookie3格式的FileCookieJar实例  
+        - 他们的关系是 CookieJar->FileCookieJar->MozillaCookieJar->LwpCookieJar
