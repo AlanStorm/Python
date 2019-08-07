@@ -2,7 +2,8 @@ from urllib import request, parse
 from http import cookiejar
 
 # 创建 cookiejar的实例
-cookie = cookiejar.CookieJar()
+filename = "cookie.txt"
+cookie = cookiejar.MozillaCookieJar(filename)
 # 生成 cookie的管理器
 cookie_handler = request.HTTPCookieProcessor(cookie)
 # 创建http请求管理器
@@ -37,18 +38,11 @@ def login():
     # 使用opener发起请求
     rsp = opener.open(req)
 
-    rsp.read().decode("utf-8")
+    # 保存cookie到文件
+    # ignore_discard表示即使cookie将要被丢弃也要保存下来
+    # ignore_expires表示如果该文件中cookie即使已经过期，保存
+    cookie.save(ignore_discard=True, ignore_expires=True)
 
 
 if __name__ == '__main__':
-    '''
-    执行完login之后，会得到授权之后的cookie
-    我们尝试把cookie打印出来
-    '''
     login()
-    print(cookie)
-    for item in cookie:
-        print(type(item))
-        print(item)
-        for i in dir(item):
-            print(i)
