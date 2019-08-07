@@ -130,3 +130,14 @@
         - 打开登录页面后自动通过用户名和密码登录
         - 自动提取返回回来的cookie
         - 利用提取的cookie登录隐私页面    
+    - handle是Handle的实例，常用的有
+        - 用来处理复杂请求
+        
+                # 生成 cookie的管理器
+                cookie_handler = request.HTTPCookieProcessor(cookie)
+                # 创建http请求管理器
+                http_handler = request.HTTPHandler()  
+                # 生成https管理器
+                https_handler = request.HTTPSHandler()
+    - 创立handle后，使用opener打开，打开后相应的业务由相应的handler处理
+    - cookie作为一个变量，打印出来，案例v14        

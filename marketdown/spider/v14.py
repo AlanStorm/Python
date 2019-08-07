@@ -26,7 +26,7 @@ def login():
     # 此键值需要从登录form的两个对用input中提取name属性
     data = {
         "email": "826041522@qq.com",
-        "pwd": ""
+        "pwd": "826sunhao"
     }
     # 吧数据进行编码
     data = parse.urlencode(data)
@@ -40,18 +40,15 @@ def login():
     rsp.read().decode("utf-8")
 
 
-def get_home_page():
-    url = 'https://www.testin.cn/user/personal_info.htm'
-
-    # 如果已经执行了login函数，到opener自动已经包含相应的cookie值
-    rsp = opener.open(url)
-
-    html = rsp.read().decode("utf-8")
-
-    with open('rsp.html', "w", encoding="utf-8") as f:
-        f.write(html)
-
-
 if __name__ == '__main__':
+    '''
+    执行完login之后，会得到授权之后的cookie
+    我们尝试把cookie打印出来
+    '''
     login()
-    get_home_page()
+    print(cookie)
+    for item in cookie:
+        print(type(item))
+        print(item)
+        for i in dir(item):
+            print(i)
