@@ -22,11 +22,11 @@ def login():
     :return:
     '''
     # url需要从登录form的action属性中提取
-    url = 'https://www.renren.com/PLogin.do'
+    url = 'https://www.testin.cn/account/login/commit.htm'
     # 此键值需要从登录form的两个对用input中提取name属性
     data = {
-        "email": "131191144223",
-        "password": "123456"
+        "email": "826041522@qq.com",
+        "pwd": ""
     }
     # 吧数据进行编码
     data = parse.urlencode(data)
@@ -37,9 +37,11 @@ def login():
     # 使用opener发起请求
     rsp = opener.open(req)
 
+    rsp.read().decode("utf-8")
+
 
 def get_home_page():
-    url = 'https://www.renren.com/965187997/profile'
+    url = 'https://www.testin.cn/user/personal_info.htm'
 
     # 如果已经执行了login函数，到opener自动已经包含相应的cookie值
     rsp = opener.open(url)
