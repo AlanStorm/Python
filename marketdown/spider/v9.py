@@ -27,5 +27,5 @@ if __name__ == '__main__':
         print(e)
     except error.URLError as e:
         print(e)
-    except Exception as  e:
+    except Exception as e:
         print(e)

@@ -103,6 +103,29 @@
         - 案例v9
 - ProxyHandler处理（代理服务器）
     - 使用代理IP，是爬虫的常用手段
+    - 获取代理服务器的地址：
+        - www.xicidali.com
+        - www.goubanjia.com
+    - 代理用来隐藏只是访问中，代理也不应许频繁访问一个固定网站，所以，代理一定要很多很多
+    - 基本使用步骤：
+        1. 设置代理地址
+        2. 常见ProxyHandler
+        3. 创建Opener
+        4. 安装Opener
+    - 案例v10
+- cookie & session
+    - 由于http协议的无记忆性，人们为了弥补这个遗憾，所采用的的一个补充协议
+    - cookie是发放给用户（即http浏览器）的一段信息，session是保存在服务器上的对应的另一半信息，用来记录用户信息
+
+- cookie和session的区别
+    - 存放位置不同
+    - cookie不安全
+    - session会保存在服务器上一定时间，会过期
+    - 半个cookie保存数据不超过4k，很多浏览器限制一个站点做多保存20个
+- session的存放位置
+    - 存放在服务器
+    - 一般情况，session是存放在内存中或者服务器中
+                   
      
      
      
