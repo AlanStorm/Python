@@ -1,0 +1,20 @@
+DEBUG:root:This is a debug log.
+INFO:root:This is a debug info.
+WARNING:root:This is a debug warning.
+ERROR:root:This is a debug error.
+CRITICAL:root:This is a debug critical.
+DEBUG:root:This is a debug log.
+INFO:root:This is a debug info.
+WARNING:root:This is a debug warning.
+ERROR:root:This is a debug error.
+CRITICAL:root:This is a debug critical.
+2019-04-10 16:06:37,936=====DEBUG=+++++This is a debug log.
+2019-04-10 16:06:37,936=====INFO=+++++This is a debug info.
+2019-04-10 16:06:37,936=====WARNING=+++++This is a debug warning.
+2019-04-10 16:06:37,936=====ERROR=+++++This is a debug error.
+2019-04-10 16:06:37,936=====CRITICAL=+++++This is a debug critical.
+2019-04-10 16:06:37,937=====DEBUG=+++++This is a debug log.
+2019-04-10 16:06:37,937=====INFO=+++++This is a debug info.
+2019-04-10 16:06:37,937=====WARNING=+++++This is a debug warning.
+2019-04-10 16:06:37,937=====ERROR=+++++This is a debug error.
+2019-04-10 16:06:37,937=====CRITICAL=+++++This is a debug critical.
