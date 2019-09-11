@@ -1,0 +1,199 @@
+{
+'environ': {'CONDA_DEFAULT_ENV': 'django', 
+'CONDA_EXE': 'F:\\Anaconda3\\Scripts\\conda.exe', 
+'CONDA_PREFIX': 'F:\\Anaconda3\\envs\\django', 
+'CONDA_PROMPT_MODIFIER': '(django) ', 
+'CONDA_PYTHON_EXE': 'F:\\Anaconda3\\python.exe', 
+'CONDA_SHLVL': '1', 
+'NUMBER_OF_PROCESSORS': '8', 
+'COMMONPROGRAMFILES': 'C:\\Program Files\\Common Files', 
+'PROMPT': '(django) $P$G', 
+'SESSIONNAME': 'Console', 
+'COMPUTERNAME': 'PC-201909021023', 
+'__INTELLIJ_COMMAND_HISTFILE__': 'C:\\Users\\Administrator\\.PyCharm2019.2\\config\\terminal\\history\\history-5', 
+'SYSTEMDRIVE': 'C:', 
+'LOGONSERVER': '\\\\PC-201909021023', 
+'USERDOMAIN': 'PC-201909021023', 
+'PROGRAMW6432': 'C:\\Program Files', 
+'HOMEPATH': '\\Users\\Administrator', 
+'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC', 
+'IDEA_INITIAL_DIRECTORY': 'F:\\PyCharm 2019.2.1\\bin', 
+'USERNAME': 'Administrator', 
+'PROGRAMFILES': 'C:\\Program Files', 
+'WINDIR': 'C:\\Windows', 
+'COMMONPROGRAMFILES(X86)': 'C:\\Program Files (x86)\\Common Files', 
+'LOCALAPPDATA': 'C:\\Users\\Administrator\\AppData\\Local', 
+'TERMINAL_EMULATOR': 'JetBrains-JediTerm', 
+'PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 30 Stepping 5, GenuineIntel', 
+'APPDATA': 'C:\\Users\\Administrator\\AppData\\Roaming', 
+'HOMEDRIVE': 'C:', 
+'ALLUSERSPROFILE': 'C:\\ProgramData', 
+'FP_NO_HOST_CHECK': 'NO', 
+'PROCESSOR_LEVEL':'6', 
+'PROGRAMDATA': 'C:\\ProgramData', 
+'COMSPEC': 'C:\\Windows\\system32\\cmd.exe', 
+'PROCESSOR_ARCHITECTURE': 'AMD64', 
+'PUBLIC': 'C:\\Users\\Public', 
+'SYSTEMROOT': 'C:\\Windows', 
+'PROCESSOR_REVISION': '1e05', 
+'TEMP': 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp', 
+'PSMODULEPATH': 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\', 
+'PATH': 'F:\\Anaconda3\\envs\\django;F:\\Anaconda3\\envs\\django\\Library\\mingw-w64\\bin;F:\\Anaconda3\\envs\\django\\Library\\usr\\bin;F:\\Anaconda3\\envs\\django\\Library\\bin;F:\\Anacond
+a3\\envs\\django\\Scripts;F:\\Anaconda3\\envs\\django\\bin;F:\\Anaconda3\\condabin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;G:\\qampp\\Data_lib\\perl\\bin;G:\\qampp\\apache\\bin;G:\\qampp\\php;G:\\
+qampp\\svnserver\\Subversion\\bin;G:\\qampp\\mysql\\bin;G:\\qampp\\tomcat\\bin;G:\\qampp\\postgresql\\bin;F:\\qampp\\Data_lib\\perl\\bin;F:\\qampp\\apache\\bin;F:\\qampp\\php;F:\\qampp\\svnserver\\Subversion\\bin;F:\\qampp\\mysql\\bin;F:\\qampp\\tomcat\\bin;F:\\qam
+pp\\postgresql\\bin;F:\\Program Files\\nodejs;F:\\Git\\cmd;F:\\svn\\bin;.;F:\\python_pip;F:\\python_pip\\Scripts;F:\\Anaconda3;F:\\Anaconda3\\Scripts;F:\\Anaconda3\\Library\\mingw-w64\\bin;F:\\Anaconda3\\Library\\usr\\bin;F:\\Anaconda3\\Library\\bin;C:\\Users\\Admi
+nistrator\\AppData\\Roaming\\npm;F:\\python_pip\\python', 
+'PROGRAMFILES(X86)': 'C:\\Program Files (x86)', 
+'USERPROFILE': 'C:\\Users\\Administrator', 
+'WINDOWS_TRACING_FLAGS': '3', 
+'OS': 'Windows_NT', 
+'TMP': 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp', 
+'WINDOWS_TRACING_LOGFILE': 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log', 
+'COMMONPROGRAMW6432': 'C:\\Program Files\\Common Files', 
+'DJANGO_SETTINGS_MODULE': 'django_first.settings', 
+'RUN_MAIN': 'true', 
+'SERVER_NAME': 'www.jccrmx.com', 
+'GATEWAY_INTERFACE': 'CGI/1.1', 
+'SERVER_PORT': '8000', 
+'REMOTE_HOST': '', 
+'CONTENT_LENGTH': '', 
+'SCRIPT_NAME': '', 
+'SERVER_PROTOCOL': 'HTTP/1.1', 
+'SERVER_SOFTWARE': 'WSGIServer/0.2', 
+'REQUEST_METHOD': 'GET', 
+'PATH_INFO': '/polls/2005/', 
+'QUERY_STRING': '', 
+'REMOTE_ADDR': '127.0.0.1', 
+'CONTENT_TYPE': 'text/plain', 
+'HTTP_HOST': '127.0.0.1:8000', 
+'HTTP_CONNECTION': 'keep-alive', 
+'HTTP_CACHE_CONTROL': 'max-age=0', 
+'HTTP_UPGRADE_INSECURE_REQUESTS': '1', 
+'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', 
+'HTTP_SEC_FETCH_MODE': 'navigate', 
+'HTTP_SEC_FETCH_USER': '?1', 
+'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3', 
+'HTTP_SEC_FETCH_SITE': 'none', 
+'HTTP_ACCEPT_ENCODING': 'gzip, deflate, br', 
+'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.9', 
+'HTTP_COOKIE': 'csrftoken=KbqJfHwLzVjPDlfcSZnqPTMPfyRMTLOqSLHvyuVJwjCrpCoA5soQwLPD0jE5muvB', 
+'wsgi.input': <django.core.handlers.wsgi.LimitedStream object at 0x00000000047812C8>, 
+'wsgi.errors': <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>, 
+'wsgi.version': (1, 0), 
+'wsgi.run_once': False, 
+'wsgi.url_scheme': 'http', 
+'wsgi.multithread': True, 
+'wsgi.multiprocess': False, 
+'wsgi.file_wrapper': <class 'wsgiref.util.FileWrapper'>, 
+'CSRF_COOKIE': 'KbqJfHwLzVjPDlfcSZnqPTMPfyRMTLOqSLHvyuVJwjCrpCoA5soQwLPD0jE5muvB'}, 
+'path_info': '/polls/2005/', 
+'path': '/polls/2005/', 
+'META': {'CONDA_DEFAULT_ENV': 'django', 
+'CONDA_EXE': 'F:\\Anaconda3\\Scripts\\conda.exe', 
+'CONDA_PREFIX': 'F:\\Anaconda3\\envs\\django', 
+'CONDA_PROMPT_MODIFIER': '(django) ', 
+'CONDA_PYTHON_EXE': 'F:\\Anaconda3\\python.exe', 
+'CONDA_SHLVL': '1', 
+'NUMBER_OF_PROCESSORS': '8', 
+'COMMONPROGRAMFILES': 'C:\\Program Files\\Common Files', 
+'PROMPT': '(django) $P$G', 
+'SESSIONNAME': 'Console', 
+'COMPUTERNAME': 'PC-201909021023', 
+'__INTELLIJ_COMMAND_HISTFILE__': 'C:\\Users\\Administrator\\.PyCharm2019.2\\config\\terminal\\history\\history-5', 
+'SYSTEMDRIVE': 'C:', 
+'LOGONSERVER': '\\\\PC-201909021023', 
+'USERDOMAIN': 'PC-201909021023', 
+'PROGRAMW6432': 'C:\\Program Files', 
+'HOMEPATH': '\\Users\\Administrator', 
+'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC', 
+'IDEA_INITIAL_DIRECTORY': 'F:\\PyCharm 2019.2.1\\bin', 
+'USERNAME': 'Administrator', 
+'PROGRAMFILES': 'C:\\Program Files', 
+'WINDIR': 'C:\\Windows', 
+'COMMONPROGRAMFILES(X86)': 'C:\\Program Files (x86)\\Common Files', 
+'LOCALAPPDATA': 'C:\\Users\\Administrator\\AppData\\Local', 
+'TERMINAL_EMULATOR': 'JetBrains-JediTerm', 
+'PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 30 Stepping 5, 
+GenuineIntel', 
+'APPDATA': 'C:\\Users\\Administrator\\AppData\\Roaming', 
+'HOMEDRIVE': 'C:', 
+'ALLUSERSPROFILE': 'C:\\ProgramData', 
+'FP_NO_HOST_CHECK': 'NO', 
+'PROCESSOR_LEVEL': '6', 
+'PROGRAMDATA': 'C:\\ProgramData', 
+'COMSPEC': 'C:\\Windows\\system32\\cmd.exe', 
+'PROCESSOR_ARCHITECTURE': 'AMD64', 
+'PUBLIC': 'C:\\Users\\Public', 
+'SYSTEMROOT': 'C:\\Windows', 
+'PROCESSOR_REVISION': '1e05', 
+'TEMP': 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp', 
+'PSMODULEPATH': 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\', 
+'PATH': 'F:\\Anaconda3\\envs\\django;F:\\Anaconda3\\envs\\django\\Li
+brary\\mingw-w64\\bin;F:\\Anaconda3\\envs\\django\\Library\\usr\\bin;F:\\Anaconda3\\envs\\django\\Library\\bin;F:\\Anaconda3\\envs\\django\\Scripts;F:\\Anaconda3\\envs\\django\\bin;F:\\Anaconda3\\condabin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbe
+m;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;G:\\qampp\\Data_lib\\perl\\bin;G:\\qampp\\apache\\bin;G:\\qampp\\php;G:\\qampp\\svnserver\\Subversion\\bin;G:\\qampp\\mysql\\bin;G:\\qampp\\tomcat\\bin;G:\\qampp\\postgresql\\bin;F:\\qampp\\Data_lib\\perl\\bin;F:\\qa
+mpp\\apache\\bin;F:\\qampp\\php;F:\\qampp\\svnserver\\Subversion\\bin;F:\\qampp\\mysql\\bin;F:\\qampp\\tomcat\\bin;F:\\qampp\\postgresql\\bin;F:\\Program Files\\nodejs;F:\\Git\\cmd;F:\\svn\\bin;.;F:\\python_pip;F:\\python_pip\\Scripts;F:\\Anaconda3;F:\\Anaconda3\\S
+cripts;F:\\Anaconda3\\Library\\mingw-w64\\bin;F:\\Anaconda3\\Library\\usr\\bin;F:\\Anaconda3\\Library\\bin;C:\\Users\\Administrator\\AppData\\Roaming\\npm;F:\\python_pip\\python', 
+'PROGRAMFILES(X86)': 'C:\\Program Files (x86)', 
+'USERPROFILE': 'C:\\Users\\Administrator', 
+'WINDOWS_TRACING_FLAGS': '3', 
+'OS': 'Windows_NT', 
+'TMP': 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp', 
+'WINDOWS_TRACING_LOGFILE': 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log', 
+'COMMONPROGRAMW6432': 'C:\\Program Files\\Common Files', 
+'DJANGO_SETTINGS_MODULE': 'django_first.settings', 
+'RUN_MAIN': 'true', 
+'SERVER_NAME': 'www.jccrmx.com', 
+'GATEWAY_INTERFACE': 'CGI/1.1', 
+'SERVER_PORT': '8000', 
+'REMOTE_HOST': '', 
+'CONTENT_LENGTH': '', 
+'SCRIPT_NAME': '', 
+'SERVER_PROTOCOL': 'HTTP/1.1', 
+'SERVER_SOFTWARE': 'WSGIServer/0.2', 
+'REQUEST_METHOD': 'GET', 
+'PATH_INFO': '/polls/2005/', 
+'QUERY_STRING': '', 
+'REMOTE_ADDR': '127.0.0.1', 
+'CONTENT_TYPE': 'text/plain', 
+'HTTP_HOST': '127.0.0.1:8000', 
+'HTTP_CONNECTION': 'keep-alive', 
+'HTTP_CACHE_CONTROL': 'max-age=0', 
+'HTTP_UPGRADE_INSECURE_REQUESTS': '1', 
+'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, 
+like Gecko) Chrome/76.0.3809.132 Safari/537.36', 
+'HTTP_SEC_FETCH_MODE': 'navigate', 
+'HTTP_SEC_FETCH_USER': '?1', 
+'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3', 
+'HTTP_SEC_FETCH_SITE': 'none', 
+'HTTP_ACCEPT_ENCODING': 'gzip, deflate, br', 
+'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.9', 
+'HTTP_COOKIE': 'csrftoken=KbqJfHwLzVjPDlfcSZnqPTMPfyRMTLOqSLHvyuVJwjCrpCoA5soQwLPD0jE5muvB', 
+'wsgi.input': <django.core.handlers.wsgi.LimitedStream object at 0x00000000047812C8>, 
+'wsgi.errors': <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>, 
+'wsgi.version': (1, 0), 
+'wsgi.run_once': False, 
+'wsgi.url_scheme': 'http',
+
+'wsgi.multithread': True, 
+'wsgi.multiprocess': False, 
+'wsgi.file_wrapper': <class 'wsgiref.util.FileWrapper'>, 
+'CSRF_COOKIE': 'KbqJfHwLzVjPDlfcSZnqPTMPfyRMTLOqSLHvyuVJwjCrpCoA5soQwLPD0jE5muvB'}, 
+'method': 'GET', 
+'content_type': 'text/plain', 
+'content_params': {}, 
+
+'_stream': <django.core.handlers.wsgi.LimitedStream object at 0x0000000004789F48>, 
+'_read_started': False, 
+'resolver_match': ResolverMatch(func=polls.views.index, 
+args=(), 
+kwargs={'year': 2005}, 
+url_name=index, 
+app_names=[], 
+namespaces=[], 
+route=polls/<int:year>/),
+
+'COOKIES': {'csrftoken': 'KbqJfHwLzVjPDlfcSZnqPTMPfyRMTLOqSLHvyuVJwjCrpCoA5soQwLPD0jE5muvB'}, 
+'session': <django.contrib.sessions.backends.db.SessionStore object at 0x0000000004789A88>, 
+'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000000045AAE58>>, 
+'_messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000000004789BC8>, 
+'csrf_processing_done': True}
