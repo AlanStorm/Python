@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.urls import reverse
 from django.core.handlers.wsgi import WSGIRequest
 import json
 
@@ -18,6 +19,14 @@ def index_1(request):
 def index_2(request, page_number):
     print(page_number)
     return HttpResponse('page number is {0}'.format(page_number))
+
+
+def index_name(request, name):
+    return HttpResponse('name is {0}'.format(name))
+
+
+def rev_parse(request):
+    return HttpResponse("Your requested URL is {0}".format(reverse("askname")))
 
 
 def test(request):
