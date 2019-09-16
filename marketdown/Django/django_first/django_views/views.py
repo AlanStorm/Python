@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 
 
 # Create your views here.
@@ -10,6 +10,7 @@ def teacher(request):
 
 
 def v2_exception(request):
+    # raise Http404
     return HttpResponse('v2')
 
 
