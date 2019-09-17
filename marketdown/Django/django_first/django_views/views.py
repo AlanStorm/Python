@@ -1,7 +1,7 @@
 from django.shortcuts import render, render_to_response
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect, Http404
-
+import os
 
 # Create your views here.
 
@@ -35,4 +35,5 @@ def v8_get(request):
 
 
 def v9_get(request):
+    print(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     return render_to_response("for_post.html")
