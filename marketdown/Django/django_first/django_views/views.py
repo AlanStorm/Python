@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 
@@ -24,3 +24,15 @@ def v10_2(request):
 
 def v11(request):
     return HttpResponse("哈哈，只是v11的访问返回呀")
+
+
+def v8_get(request):
+    rst = ''
+    for k, v in request.GET.items():
+        rst += k + "-->" + v
+        rst += ","
+    return HttpResponse("Get values of Request is {0}".format(rst))
+
+
+def v9_get(request):
+    return render_to_response("for_post.html")
