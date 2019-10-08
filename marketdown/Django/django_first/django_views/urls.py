@@ -11,4 +11,5 @@ urlpatterns = [
     path('v11/', views.v11, name="v11"),
     path("v8_get/", views.v8_get, name='v8_get'),
     path("v9_get/", views.v9_get, name='v9_get'),
+    path("v9_post/", views.v9_post, name='v9_post'),
 ]
