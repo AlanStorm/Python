@@ -1,6 +1,8 @@
 from django.shortcuts import render, render_to_response
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.template import loader
+from django.views import defaults
 import os
 
 
@@ -47,3 +49,45 @@ def v9_post(request):
         rst += ","
 
     return HttpResponse("Get value of POST is {0}".format(rst))
+
+
+def render_test(request):
+    # 环境变量
+    # c = dict()
+
+    rsp = render(request, 'render.html')
+
+    return rsp
+
+
+def render2_test(request):
+    # 环境变量
+    c = dict()
+
+    c["name"] = "haha"
+    c["name1"] = "haha1"
+    c["name2"] = "haha2"
+
+    rsp = render(request, 'render2.html', context=c)
+    return rsp
+
+
+def render3_test(request):
+    # 得到模板
+    t = loader.get_template('render2.html')
+    print(type(t))
+
+    r = t.render(context={"name": "测试"})
+    print(type(r))
+
+    return HttpResponse(r)
+
+
+def render4_test(request):
+    rsp = render_to_response("render2.html", context={"name": "老师看来是"})
+
+    return rsp
+
+
+def get404(request):
+    return defaults.page_not_found(request, Exception)
