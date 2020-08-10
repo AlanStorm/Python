@@ -115,41 +115,41 @@ class GameField(object):
 
             return tighten(merge(tighten(row)))
 
-    def is_win(self):
-        return any(any(i >= self.win_value for i in row) for row in self.field)
+        def move_is_possible(self):
+            def invert(field):
+                return [row[::-1] for row in field]
 
-    def is_gameover(self):
-        return not any(self.move_is_possible(move) for move in actions)
+            def transpose(field):
+                return [list(row) for row in zip(*field)]
 
-    def move_is_possible(self):
-        def invert(field):
-            return [row[::-1] for row in field]
+            def row_is_left_moveable(row):
+                def change(i):
+                    if row[i] == 0 and row[i + 1] != 0:
+                        return True
+                    if row[i] != 0 and row[i + 1] == row[i]:
+                        return True
+                    return False
 
-        def transpose(field):
-            return [list(row) for row in zip(*field)]
+                return any(change(i) for i in range(len(row) - 1))
 
-        def row_is_left_moveable(row):
-            def change(i):
-                if row[i] == 0 and row[i + 1] != 0:
-                    return True
-                if row[i] != 0 and row[i + 1] == row[i]:
-                    return True
+            check = {}
+            check['Left'] = lambda field: any(row_is_left_moveable(row) for row in field)
+            # 判断矩阵每一行有没有可以右移动的元素。这里只用进行判断，所以矩阵变换之后，不用再变换复原
+            check['Right'] = lambda field: check['Left'](invert(field))
+
+            check['Up'] = lambda field: check['Left'](transpose(field))
+
+            check['Down'] = lambda field: check['Right'](transpose(field))
+
+            # 如果 direction 是“左右上下”即字典 check 中存在的操作，那就执行它对应的函数
+            if direction in check:
+                # 传入矩阵，执行对应函数
+                return check[direction](self.field)
+            else:
                 return False
 
-            return any(change(i) for i in range(len(row) - 1))
+        def is_win(self):
+            return any(any(i >= self.win_value for i in row) for row in self.field)
 
-        check = {}
-        check['Left'] = lambda field: any(row_is_left_moveable(row) for row in field)
-        # 判断矩阵每一行有没有可以右移动的元素。这里只用进行判断，所以矩阵变换之后，不用再变换复原
-        check['Right'] = lambda field: check['Left'](invert(field))
-
-        check['Up'] = lambda field: check['Left'](transpose(field))
-
-        check['Down'] = lambda field: check['Right'](transpose(field))
-
-        # 如果 direction 是“左右上下”即字典 check 中存在的操作，那就执行它对应的函数
-        if direction in check:
-            # 传入矩阵，执行对应函数
-            return check[direction](self.field)
-        else:
-            return False
+        def is_gameover(self):
+            return not any(self.move_is_possible(move) for move in actions)
