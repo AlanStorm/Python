@@ -145,7 +145,7 @@ class ScreenSaver:
             ball.move_ball()
 
         # after是200毫秒后启动一个函数，需要启动的函数是第二个参数
-        self.canvas.after(100, self.run_screen_saver)
+        self.canvas.after(50, self.run_screen_saver)
 
     def myquit(self, e):
         # 此处只是利用了事件处理机制

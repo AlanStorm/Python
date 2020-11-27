@@ -61,7 +61,7 @@ def symbol(symbol):
         operator = symbol
         sv.set(num1 + operator)
     else:  # 认为是按下的等于号
-        if operator == '=':
+        if operator == '+':
             rst = int(num1) + int(num2)
         if operator == '-':
             rst = int(num1) - int(num2)
