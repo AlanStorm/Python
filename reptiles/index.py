@@ -4,6 +4,7 @@ import time
 from fake_useragent import UserAgent
 import requests
 from bs4 import BeautifulSoup
+from concurrent.futures import ThreadPoolExecutor, wait, ALL_COMPLETED
 
 domain_url = "https://m.ibiquge.net"
 
@@ -40,7 +41,7 @@ def download(url='https://m.ibiquge.net/23_23717/10583299.html'):
     content = str(content).replace('<br/><br/>', "\n").replace("</div>", "").replace(
         '<div class="Readarea ReadAjax_content" id="chaptercontent">', "").replace(u'\xa0', '').strip()
 
-    save_text(content, title)
+    save_text(content, now_url.split('_')[1].split("/")[1] + " " + title)
     time.sleep(1)
     if (now_url.split('_')[0] == next_url.split('_')[0]) & (now_url.split('_')[1] == next_url.split('_')[1]):
         download(domain_url + next_url + '.html')
@@ -56,9 +57,19 @@ def main():
     urls = content.find_all("a")
     url_list = [url['href'] for url in urls]
     url_list.remove("#bottom")
-    print(len(url_list))
+    print("start")
     # for url in url_list:
     #     download(domain_url + url)
+
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        futures = []
+        for url in url_list:
+            future = executor.submit(download, domain_url + url)
+            futures.append(future)
+
+    # 等待所有的线程完成，才进行后续的逻辑
+    wait(futures, return_when=ALL_COMPLETED)
+    print("end")
 
 
 if __name__ == '__main__':
