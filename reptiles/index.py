@@ -53,7 +53,7 @@ def main():
     r = requests.get(domain_url + '/23/23717/', headers=headers)
     r.encoding = "utf-8"
     soup = BeautifulSoup(r.text, 'lxml')
-    content = soup.find("div", class_='directoryArea')
+    content = soup.find("div", class_='directoryArea') 
     urls = content.find_all("a")
     url_list = [url['href'] for url in urls]
     url_list.remove("#bottom")
